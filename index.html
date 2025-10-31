@@ -4,11 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home | SHUBHAM's CodeQuotient</title>
-    <link rel="icon" style="border-radius:50%;" href="/Shubham-s-CodeQuotient/Images/myimage.jpg" type="image/jpg">
-    <link rel="stylesheet" href="/Shubham-s-CodeQuotient/Assests/style.css">
+    <link rel="icon" style="border-radius:50%;" href="/Images/myimage.jpg" type="image/jpg">
+    <link rel="stylesheet" href="/Assests/style.css">
     <script src="https://cdn.jsdelivr.net/pyodide/v0.23.4/full/pyodide.js"></script>
-    <script src="https://cdn.botpress.cloud/webchat/v3.3/inject.js" defer></script>
-    <script src="https://files.bpcontent.cloud/2025/09/30/06/20250930065604-NRF2BUF9.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
     .hero{
         width: 100%;
@@ -42,9 +41,8 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background-image: url("/Shubham-s-CodeQuotient/Images/main1background.jpg");
+        background-image: url("/Images/main1background.jpg");
         background-size: cover;
-        box-shadow: none;
         background-position: center;
         filter: blur(8px);
         z-index: -1;
@@ -53,8 +51,9 @@
         display: flex;
         flex-direction: row;
         overflow: hidden;
-        background-color: deeppink;
+        background-color: #F5F5F5;
         gap: 3rem;
+        color: #000;
         width: 100%;
         max-width: 1600px;
         justify-content: center;
@@ -120,24 +119,25 @@
         padding: 1rem;
         width:400px;
         max-width: 600px;
-        background-color: #1a1a1a;
+        color: black;
+        background-color: #d3d3d3;
         border-radius: 8px;
     }
     .myinfo img{
         width: 200px;
         height: 200px;
-        border: 5px solid white;
+        border: 5px solid rgb(255, 253, 253);
         border-radius: 100px;
     }
     .myskills h1 {
         font-size: 2.5rem;
-        color: rgb(255, 255, 255);
+        color: black;
         text-align: center;
         margin-bottom: 2rem;
     }
     .myskills p {
         font-size: 1.2rem;
-        color: white;
+        color: black;
         margin-bottom: 2rem;
         text-align: center;
     }
@@ -152,7 +152,7 @@
         font-size: 1rem;
     }
     .myskills li {
-        background: rgba(245, 244, 244, 0.9);
+        background: rgba(180, 179, 179, 0.9);
         padding: 1rem 2rem;
         color:black;
         border-radius: 4px;
@@ -163,7 +163,7 @@
         text-align: center;
     }
     .myskills button{
-        background:rgba(255, 255, 255, 0.747);
+        background: rgba(233, 231, 231, 0.747);
         padding: 1rem 2rem;
         font-size: 1.1rem;
         font-weight: bold;
@@ -193,26 +193,26 @@
         width: 450px;
         height: 300px; 
         max-height: 400px;
-        border: 2px solid white; 
+        border: 2px solid rgb(0, 0, 0); 
         border-radius: 50px;
     }
     .myprojects , .myskills {
         overflow: hidden;
         justify-content: center;
-        background-color: #1a1a1a;
+        background-color:#fffdfdca;
         width: 600px;
-        box-shadow: 2px 10px 18px  rgb(255, 255, 255);
+        box-shadow: 2px 10px 18px rgb(179, 167, 174);
         max-width: 1300px;
         align-items: center;
         padding: 2rem 3rem;
         align-items: center;
         margin: auto;
-        border: 2px solid rgb(255, 255, 255);
+        border: 2px solid #DDDDDD;
         border-radius: 20px;
     }
     .myprojects h1 {
         font-size: 2.5rem;
-        color: rgb(255, 255, 255);
+        color: black;
         text-align: center;
         margin-bottom: 2rem;
     }
@@ -226,7 +226,7 @@
         font-size: 1rem;
     }
     .myprojects li {
-        background: rgba(245, 244, 244, 0.925);
+        background:  rgba(180, 179, 179, 0.9);
         padding: 3rem 2rem;
         border-radius: 4px;
         border-radius: 20px;
@@ -236,7 +236,7 @@
         color: black;
     }
     .myprojects button{
-        background: rgba(255, 255, 255, 0.747);
+        background: rgba(233, 231, 231, 0.747);
         padding: 1rem 2rem;
         font-size: 1.1rem;
         font-family: 'Poppins', sans-serif;
@@ -274,7 +274,8 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        background-color: #1a1a1a;
+        background-color:  rgb(255, 245, 245);
+        color: #333333;
     }
     
    .sidebar-toggle-btn1{
@@ -299,14 +300,16 @@
             flex-direction: column;
             margin: auto;
             justify-content: center;
-            max-width: 90vw;
-            height: fit-content;
+            width: 100%;
+            height: 800px;
             transition: all 0.3s ease-in;
             transform: scale(1);
             animation: fadeScaleIn 0.5s ease-out forwards;
         }
         .main1::before{
-            background: none;
+            background-image: url("/Images/main1background.jpg");
+            background-size: stretch;
+            box-shadow: inset 0 0 300px rgb(255, 255, 255);
         }
         .images{
             display: none;
@@ -506,14 +509,6 @@
   }
 }
 
-    @keyframes borderLoop {
-        0% {
-            background-position: 0% 50%;
-        }
-        100% {
-            background-position: 100% 50%;
-        }
-    }
 
     @keyframes slide-x-mobile {
         0% {
@@ -554,22 +549,22 @@
         <div class="container">
             <div class="header-top">
                 <div class="logo">
-                    <img src="https://cdn-icons-png.flaticon.com/512/7560/7560719.png" alt="logo">
+                    <img src="/Images/logo.png" alt="logo">
                     SHUBHAM's CodeQuotient
                 </div>
                 <nav class="nav">
                     <ul class="navlinks">
-                        <li><a href="/index.html">Home</a></li>
-                        <li><a href="/Shubham-s-CodeQuotient/Projects/projects.html">Projects</a></li>
-                        <li><a href="/Shubham-s-CodeQuotient/Tutorials/tutorials.html">Tutorials</a></li>
-                        <li><a href="/Shubham-s-CodeQuotient/Datasets/datasets.html">Datasets</a></li>
-                        <li><a href="/Shubham-s-CodeQuotient/notes.html">Notes</a></li>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="Projects\projects.html">Projects</a></li>
+                        <li><a href="Tutorials\tutorials.html">Tutorials</a></li>
+                        <li><a href="Datasets\datasets.html">Datasets</a></li>
+                        <li><a href="notes.html">Notes</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </nav>
                 <div class="right-section">
                     <input type="text" placeholder="Search..." class="search-bar">
-                    <button onclick="location.href='/Shubham-s-CodeQuotient/Login/login.html'" class="header-button">Login</button>
+                    <button onclick="location.href='/Login/login.html'" class="header-button">Login</button>
                     <button class="header-button">Signup</button>
                 </div>
             </div>
@@ -579,12 +574,15 @@
                     <li class="dropdown">
                     <a href="#tutorials">Tutorials <i class="fas fa-chevron-down dropdown-icon"></i></a>
                     <div class="dropdown-content">
-                            <a href="/Shubham-s-CodeQuotient/Tutorials/Python/python.html">Data Science Python</a>
-                            <a href="/Shubham-s-CodeQuotient/Tutorials/SQL/sql.html">Sql</a>
-                            <a href="/Shubham-s-CodeQuotient/Tutorials/R Programming/ Programming/ ">R programming</a>
-                            <a href="/Shubham-s-CodeQuotient/Tutorials/Excel/">Excel</a>
-                            <a href="/Shubham-s-CodeQuotient/Tutorials/PostgreSQL/">Postgre Sql</a>
-                            <a href="/Shubham-s-CodeQuotient/Tutorials/Power Bi/">Power Bi</a>
+                            <a href="/Tutorials/Python/python.html">Python</a>
+                            <a href="/Tutorials/SQL/sql.html">Sql</a>
+                            <a href="/Tutorials/Pandas/pandas.html">Pandas</a>
+                            <a href="/Tutorials/Numpy/numpy.html">NumPy</a>
+                            <a href="/Tutorials/Matplot/matplot.html">Matplot</a>
+                            <a href="/Tutorials/R Programming/R programming.html">R programming</a>
+                            <a href="/Tutorials/Excel/excel.html">Excel</a>
+                            <a href="/Tutorials/PostgreSQL/postgresql.html">Postgre Sql</a>
+                            <a href="/Tutorials/Power Bi/powerbi.html">Power Bi</a>
                     </div>  
                     </li>
                 </ul>
@@ -593,15 +591,15 @@
                 <nav>
                     <ul class="navlinks">
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="/Shubham-s-CodeQuotient/Projects/projects.html">Projects</a></li>
-                        <li><a href="/Shubham-s-CodeQuotient/Tutorials/tutorials.html">Tutorials</a></li>
-                        <li><a href="/Shubham-s-CodeQuotient/Datasets/datasets.html">Datasets</a></li>
-                        <li><a href="/Shubham-s-CodeQuotient/notes.html">Notes</a></li>
+                        <li><a href="/Projects/projects.html">Projects</a></li>
+                        <li><a href="/Tutorials/tutorials.html">Tutorials</a></li>
+                        <li><a href="/Datasets/datasets.html">Datasets</a></li>
+                        <li><a href="/notes.html">Notes</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </nav>
                 <div class="right-section">
-                    <button onclick="location.href='/Shubham-s-CodeQuotient/Login/login.html'" class="header-button">Login</button>
+                    <button onclick="location.href='Login/login.html'" class="header-button">Login</button>
                     <button class="header-button">Signup</button>
                 </div>
             </div>
@@ -612,14 +610,14 @@
         <div class="background"></div>
         <div class="main1">
             <div class="images">
-                <img class="image1" src="https://optimizory.com/assets/img/tech-talk-blog/data-analysis.jpg" alt="image1">
-                <img class="image2" src="https://c0.wallpaperflare.com/preview/241/384/859/analysis-analytics-analyzing-annual.jpg" alt="image2">
-                <img class="image3" src="https://cdn.getmidnight.com/50062ddd13358c02dea31c6e82a524c5/2023/09/AdobeStock_600314909.jpeg" alt="image3">
-                <img class="image4" src="https://png.pngtree.com/thumb_back/fw800/background/20241128/pngtree-modern-data-dashboard-with-floating-icons-image_16700279.jpg" alt="image4">
+                <img class="image1" src="/Images/data-analysis1.jpg" alt="image1">
+                <img class="image2" src="/Images/data-analysis2.jpg" alt="image2">
+                <img class="image3" src="/Images/data-analysis3.jpeg" alt="image3">
+                <img class="image4" src="/Images/data-analysis4.jpg" alt="image4">
             </div>
             <div class="myinfo">
-                <h2 style="margin-bottom: 1rem; border-bottom: 1px solid white;">About me</h2>
-                <img src="/Shubham-s-CodeQuotient/Images/myimage.jpg" alt="My Info">
+                <h2 style="margin-bottom: 1rem; border-bottom: 1px solid rgb(0, 0, 0);">About me</h2>
+                <img src="/Images/myimage.jpg" alt="My Info">
                 <h1 style="margin-top: 1rem;">SHUBHAM KADAM</h1>
                 <p style="margin-top: 1rem; margin-bottom: 1rem;">Hello everyone I'm a Data Analysis enthusiast. Focusing on Handling and managing large datasets to analyze and visualize data graphically throughout programming language like Python to extract meaningful insights and drive decision-making with the help of multiple Python libraries.
                 </p>
@@ -654,89 +652,92 @@
                     <ul>
                         <li>
                             <div class="skillimg">
-                                <a href="Shubham-s-CodeQuotient/Tutorials/Python/python.html">
-                                <img src="/Shubham-s-CodeQuotient/Images/pyimg.png" alt="PYTHON">
+                                <a href="/Tutorials/Python/python.html">
+                                <img src="/Images/pyimg.png" alt="PYTHON">
                                 </a>
                             </div>PYTHON
                         </li>
                         <li>
                             <div class="skillimg">
-                                <a href="/Shubham-s-CodeQuotient/Tutorials/SQL/sql.html">
-                                <img src="/Shubham-s-CodeQuotient/Images/sqlimg.png" alt="SQL">
+                                <a href="/Tutorials/SQL/sql.html">
+                                <img src="/Images/sqlimg.png" alt="SQL">
                                 </a>
                             </div>SQL
                         </li>
                         <li>
                             <div class="skillimg">
-                                <a href="/Shubham-s-CodeQuotient/Tutorials/R Programming/">
-                                <img src="/Shubham-s-CodeQuotient/Images/rprimg.jpg" alt="R PROGRAMMING">
+                                <a href="/Tutorials/R Programming/">
+                                <img src="/Images/rprimg.jpg" alt="R PROGRAMMING">
                                 </a>
                             </div>R
                         </li>
                         <li>
                         <div class="skillimg">
-                            <a href="/Shubham-s-CodeQuotient/Tutorials/Pandas/pandas.html">
-                            <img src="/Shubham-s-CodeQuotient/Images/pdimg.png" alt="PANDAS">
+                            <a href="/Tutorials/Pandas/pandas.html">
+                            <img src="/Images/pdimg.png" alt="PANDAS">
                             </a>
                         </div>PANDAS
                         </li>
                         <li>
                             <div class="skillimg">
-                                <a href="/Shubham-s-CodeQuotient/Tutorials/Numpy/">
-                                <img src="/Shubham-s-CodeQuotient/Images/npimg.png" alt="NUMPY">
+                                <a href="/Tutorials/Numpy/">
+                                <img src="/Images/npimg.png" alt="NUMPY">
                                 </a>
                             </div>NUMPY
                         </li>
                         <li>
                             <div class="skillimg">
-                                <a href="/Shubham-s-CodeQuotient/Tutorials/Matplot/">
-                                <img src="/Shubham-s-CodeQuotient/Images/mtplotimg.png" alt="MATPLOTLIB">
+                                <a href="/Tutorials/Matplot/">
+                                <img src="/Images/mtplotimg.png" alt="MATPLOTLIB">
                                 </a>
                             </div>MATPLOTLIB
                         </li>
                         <li>
                             <div class="skillimg">
-                                <a href="/Shubham-s-CodeQuotient/Tutorials/">
-                                <img src="/Shubham-s-CodeQuotient/Images/seabimg.png" alt="SEABORN">
+                                <a href="/Tutorials/Seaborn/">
+                                <img src="/Images/seabimg.png" alt="SEABORN">
                                 </a>
                             </div>SEABORN
                         </li>
                         <li>
                             <div class="skillimg">
-                                <a href="/Shubham-s-CodeQuotient/Tutorials/Excel/">
-                                <img src="/Shubham-s-CodeQuotient/Images/excelimg.jpg" alt="EXCEL">
+                                <a href="/Tutorials/Excel/">
+                                <img src="/Images/excelimg.jpg" alt="EXCEL">
                                 </a>
                             </div>EXCEL
                         </li>
                         <li>
                             <div class="skillimg">
-                                <a href="/Shubham-s-CodeQuotient/Tutorials/PostgreSQL/">
-                                <img src="/Shubham-s-CodeQuotient/Images/pstgsqlimg.png" alt="POSTGRESQL">
+                                <a href="/Tutorials/PostgreSQL/">
+                                <img src="/Images/pstgsqlimg.png" alt="POSTGRESQL">
                                 </a>
                             </div>POSTGRESQL
                         </li>
                         <li>
                             <div class="skillimg">
-                                <a href="/Shubham-s-CodeQuotient/Tutorials/Power Bi/">
-                                <img src="/Shubham-s-CodeQuotient/Images/pbiimg.png" alt="POWER BI">
+                                <a href="/Tutorials/Power Bi/">
+                                <img src="/Images/pbiimg.png" alt="POWER BI">
                                 </a>
                             </div>POWER BI
                         </li>
                     </ul>
-                    <button onclick="location.href='/Shubham-s-CodeQuotient/Tutorials/tutorials.html'">EXPLORE MORE</button>
+                    <button onclick="location.href='/Tutorials/tutorials.html'">EXPLORE MORE</button>
                 </div>
                 <div class="myprojects">
                     <h1>My Projects</h1>
                     <ul>
+                        <li>QR Generator</li>
+                        <li>Phone Data Masking</li>
+                        <li>EV Population analysis</li>
                         <li>India census analysis</li>
                         <li>Netflix user analysis</li>
                         <li>Covid-19 analysis</li>
                         <li>Spotify user analysis</li>
                     </ul>
-                    <button onclick="location.href='/Shubham-s-CodeQuotient/Projects/Projects.html'">EXPLORE MORE</button>
+                    <button onclick="location.href='/Projects/Projects.html'">EXPLORE MORE</button>
                 </div>  
             </div>
-            <button class="button2" onclick="location.href='/Shubham-s-CodeQuotient/Datasets/datasets.html'">EXPLORE DATASETS</button>
+            <button class="button2" onclick="location.href='/Datasets/datasets.html'">EXPLORE DATASETS</button>
         </div>
     </section>
   
@@ -745,14 +746,14 @@
             <h3 class="langtitle">Connect with me for the better experience and the knowledge</h3>
         </div>
         <div class="social-links">
-                <a href="https://www.youtube.com/@LEARNWITHSKADAM_6457" style="--accent-color:red;" aria-label="Youtube"><img src="/Shubham-s-CodeQuotient/Images/youtube.jpg" alt="Youtube" width="31px"></a>
-                <a href="https://github.com/shubh645" style="--accent-color: rgb(52, 52, 52);" aria-label="Github"><img src="/Shubham-s-CodeQuotient/Images/github.png" alt="Github" width="31px"></a>
-                <a href="https://www.linkedin.com/in/shubham-kadam-b8856031a?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BUAYDKko9S02GUSRNrD3vJg%3D%3D" style="--accent-color:rgb(25, 67, 233);" aria-label="Linkedin"><img src="/Shubham-s-CodeQuotient/Images/linkedin.png" alt="Linkedin" width="35px"></a>
+                <a href="https://www.youtube.com/@LEARNWITHSKADAM_6457" style="--accent-color:red;" aria-label="Youtube"><img src="/Images/youtube.jpg" alt="Youtube" width="31px"></a>
+                <a href="https://github.com/shubh645" style="--accent-color: rgb(52, 52, 52);" aria-label="Github"><img src="/Images/github.png" alt="Github" width="31px"></a>
+                <a href="https://www.linkedin.com/in/shubham-kadam-b8856031a?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BUAYDKko9S02GUSRNrD3vJg%3D%3D" style="--accent-color:rgb(25, 67, 233);" aria-label="Linkedin"><img src="/Images/linkedin.png" alt="Linkedin" width="35px"></a>
         </div>
             <p style="font-size:bold;">Made with ❤️ by SHUBHAM</p><br>
             <p>Code is like poetry Some get it,some don't<br>Those who don't get it,are <b style="color: #f80404;"> confused.</b><br>Those who get it,are even <b style="color:#f80404;">more confused.</b></p><br><br>
             <p class="copyright">© 2025 SHUBHAM's CodeQuotient. All rights reserved.</p>
     </footer>
-    <script src="/Shubham-s-CodeQuotient/Script/script.js"></script>
+    <script src="/Script/script.js"></script>
 </body>
 </html>

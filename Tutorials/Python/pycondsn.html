@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control Statements | Data Science Python | Tutorials | Shubham's CodeQuotient</title>
+    <link rel="icon" style="border-radius:50%;" href="/Images/myimage.jpg" type="image/jpg">
+    <link rel="stylesheet" href="/Assests/style.css">
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.23.4/full/pyodide.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-top">
+                <div class="logo">
+                    <img src="/Images/logo.png" alt="logo">
+                    SHUBHAM's CodeQuotient
+                </div>
+                <nav>
+                    <ul class="navlinks">
+                        <li><a href="/index.html">Home</a></li>
+                        <li><a href="/Projects/projects.html">Projects</a></li>
+                        <li><a href="/Tutorials/tutorials.html">Tutorials</a></li>
+                        <li><a href="/Datasets/datasets.html">Datasets</a></li>
+                        <li><a href="/notes.html">Notes</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="right-section">
+                    <input type="text" placeholder="Search..." class="search-bar">
+                    <button class="header-button" onclick="location.href='/Shubham-s-CodeQuotient/Login/login.html'">Login</button>
+                    <button class="header-button">Signup</button>
+                </div>
+            </div>
+            <div class="header-bottom">
+                <ul class="secondary-nav">
+                    <input type="text" placeholder="Search..." class="search-bar">
+                    <li class="dropdown">
+                        <a href="#tutorials">Tutorials <i class="fas fa-chevron-down dropdown-icon"></i></a>
+                        <div class="dropdown-content">
+                            <a href="/Tutorials/Python/python.html">Python</a>
+                            <a href="/Tutorials/SQL/sql.html">Sql</a>
+                            <a href="/Tutorials/Pandas/pandas.html">Pandas</a>
+                            <a href="/Tutorials/Numpy/numpy.html">NumPy</a>
+                            <a href="/Tutorials/Matplot/matplot.html">Matplot</a>
+                            <a href="/Tutorials/R Programming/R programming.html">R programming</a>
+                            <a href="/Tutorials/Excel/excel.html">Excel</a>
+                            <a href="/Tutorials/PostgreSQL/postgresql.html">Postgre Sql</a>
+                            <a href="/Tutorials/Power Bi/powerbi.html">Power Bi</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <section class="main">
+        <div class="internal-container">
+        <!-- Button to toggle sidebar (visible on mobile) -->
+        <button id="sidebar-toggle" class="sidebar-toggle-btn" aria-label="Open sidebar" style="display:none;">
+            &#9776; Menu
+        </button>
+        <div class="main-content">
+            <div class="internalsidebar" id="internalsidebar">
+                <h3>Introduction</h3>
+                <nav>
+                    <ul>
+                    <li><button class="internal-nav-link" data-target="pyoverview.html">Overview</button></li>
+                    <li><button class="internal-nav-link" data-target="pyvariables.html">Variables</button></li>
+                    <li><button class="internal-nav-link" data-target="pydatatype.html">Data types</button></li>
+                    <li><button class="internal-nav-link" data-target="pytypecasting.html">Type casting</button></li>
+                    </ul>
+                </nav>
+                <h3>Basics of Python</h3>
+                <nav>
+                    <ul>
+                        <li><button class="internal-nav-link" data-target="pyloops.html">Loops</button></li>
+                        <li><button class="internal-nav-link" data-target="pycondsn.html">Conditional Statements</button></li>
+                        <li><button class="internal-nav-link" data-target="pylist.html">List</button></li>
+                        <li><button class="internal-nav-link" data-target="pytuple.html">Tuple</button></li>
+                        <li><button class="internal-nav-link" data-target="pydictionary.html">Dictionary</button></li>
+                        <li><button class="internal-nav-link" data-target="pysets.html">Sets</button></li>
+                        <li><button class="internal-nav-link" data-target="pystrings.html">Strings</button></li>
+                    </ul>
+                </nav>
+                <h3>Python for Data Analysis</h3>
+                <nav>
+                    <ul>
+                        <li><button class="internal-nav-link" data-target="pypandas.html">Pandas</button></li>
+                        <li><button class="internal-nav-link" data-target="pynumpy.html">Numpy</button></li>
+                        <li><button class="internal-nav-link" data-target="pymatplotlib.html">Matplotlib</button></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        </div>
+        <div class="internal-content-display">
+            <h3>Conditional Statements in Python</h3>
+            <p>Conditional Statements are used to perform different actions based on different conditions. Python has several conditional statements:</p>
+            <ul style="margin-left: 2rem;">
+                <li>if</li>
+                <li>if-else</li>
+                <li>elif</li>
+            </ul>
+            <h4>if statement</h4>
+                                <strong>If statement</strong> — Executes a block when a condition is True.
+                    <pre><code>
+x = 10
+if x > 5:
+    print("x is greater than 5")  # runs because condition is True
+                    </code></pre>
+                    <p>Explanation: The expression after <code>if</code> is evaluated. If it's True, the indented block runs. Use <code>elif</code> and <code>else</code> to handle other cases.</p>
+            <h4>if else statement</h4>
+            <strong>If-else statement</strong> — Executes one block when condition is True, another when False.
+            <pre><code>
+age = 15
+if age >= 18:
+    print("You can vote")  # skipped because condition is False
+else:
+    print("You cannot vote")  # runs because condition was False
+        </code></pre>
+        <p>Explanation: When the if condition is False, the else block runs. It's useful for handling two mutually exclusive cases.</p>
+        <h4>elif statement</h4>
+        <strong>elif statement</strong> — Tests additional conditions when the preceding if (or elif) is False. Use it to chain multiple mutually exclusive branches.
+        <pre><code>
+num = 0
+if num > 0:
+    print("Positive")
+elif num == 0:
+    print("Zero")
+else:
+    print("Negative")
+        </code></pre>
+
+        <p>Explanation: Python evaluates conditions top to bottom. The first condition that evaluates to True runs its block and the rest are skipped. You can have multiple elif clauses to handle several distinct cases.</p>
+        <div class="playground">
+            <h1>🚀 Python Playground</h1>
+            <p>Write Python code below and run it in your browser!</p>
+            <div class="editor-output-wrapper">
+                <div>
+                    <textarea id="code" placeholder="Write your Python code here..."></textarea>
+                </div>
+                <div id="output">
+                    <img id="plot" />
+                </div>
+            </div>
+
+            <button class="button1" onclick="runPython()">Run Code</button>
+        </div>
+        <div class="navigation-buttons">
+            <button class="button prev-topic-button" data-target="pyloops.html">Previous Topic:</button>
+            <button class="button next-topic-button" data-target="pylist.html">Next Topic:</button>
+        </div>
+        </div>
+        </section>
+     <footer id="contact">
+        <div class="footercontainer">
+            <h3>Connect with me for the better experience and the knowledge</h3>
+        </div>
+        <div class="social-links">
+                <a href="https://www.youtube.com/@LEARNWITHSKADAM_6457" style="--accent-color:red;" aria-label="Youtube"><img src="/Images/youtube.jpg" alt="Youtube" width="31px"></a>
+                <a href="https://github.com/shubh645" style="--accent-color: rgb(52, 52, 52);" aria-label="Github"><img src="/Images/github.png" alt="Github" width="31px"></a>
+                <a href="https://www.linkedin.com/in/shubham-kadam-b8856031a?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BUAYDKko9S02GUSRNrD3vJg%3D%3D" style="--accent-color:rgb(25, 67, 233);" aria-label="Linkedin"><img src="/Images/linkedin.png" alt="Linkedin" width="35px"></a>
+        </div>
+            <p style="font-size:bold;">Made with ❤️ by SHUBHAM</p><br>
+            <p>Code is like poetry Some get it,some don't<br>Those who don't get it,are <b style="color: #f80404;"> confused.</b><br>Those who get it,are even <b style="color:#f80404;">more confused.</b></p><br><br>
+            <p class="copyright">© 2025 SHUBHAM's CodeQuotient. All rights reserved.</p>
+    </footer>
+    <script src="/Script/script.js"></script>
+    <script>
+            // Sidebar toggle for mobile
+            var sidebarToggleBtn = document.getElementById('sidebar-toggle');
+            var internalsidebar = document.getElementById('internalsidebar');
+            sidebarToggleBtn.onclick = function() {
+                internalsidebar.classList.toggle('active');
+                if (internalsidebar.classList.contains('active')) {
+                    sidebarToggleBtn.style.setProperty('display', 'none', 'important');
+                }
+            };
+            // Optional: close sidebar when clicking outside (mobile UX)
+            document.addEventListener('click', function(e) {
+                if (internalsidebar.classList.contains('active') && !internalsidebar.contains(e.target) && e.target !== sidebarToggleBtn) {
+                    internalsidebar.classList.remove('active');
+                    sidebarToggleBtn.style.setProperty('display', 'block', 'important');
+                }
+            });
+    </script>
+</body>
+</html>
