@@ -319,12 +319,6 @@
             cursor: pointer;
             box-shadow: 0 10px 10px rgba(186, 3, 97, 0.252);
         }
-        .button2:hover {
-            background-color: rgb(255, 20, 59);
-            color: rgb(0, 0, 0);
-            box-shadow: 0 10px 20px rgba(186, 3, 97, 0.452);
-            transition: var(--transition);
-        }
          /* Main Section Styles */
         .main {
             display: flex;

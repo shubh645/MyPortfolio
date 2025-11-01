@@ -10,8 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
     .hero{
-        width: 100%;
-        max-height:fit-content;
+        text-align: center;
     }
     .header-bottom input{
         display: none;
@@ -19,20 +18,26 @@
     .right-section1{
         display: none;
     }
+    .content{
+        position: relative;
+        width: 1000px;
+        color: rgb(0, 0, 0);
+        text-align: center;
+        z-index: 3;
+    }
     /* Main Section Styles */
     .main1 {
-        display: flex;
         position: relative;
-        flex-direction: row;
-        gap: 15rem;
-        width: 100%; /* Center the content area and add vertical margin */
+        height: 100%;
+        display: flex;
         align-items: center;
-        height: 700px;
-        padding-left: 2rem;
-        padding-top: 3rem;
-        padding-bottom: 3rem;
+        justify-content: center;
+        padding: 2rem;
+        width: 100%;
+        gap: 4rem;
         overflow: hidden;
-        z-index: 0;
+        z-index: 1;
+
     }
     .main1::before {
         content: "";
@@ -45,7 +50,61 @@
         background-size: cover;
         background-position: center;
         filter: blur(8px);
+        z-index: -2;
+    }
+    /* Semi-transparent overlay */
+    .main1::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(236, 203, 242, 0.3); /* Light overlay */
         z-index: -1;
+    }
+
+    .main1btn{
+        display: flex; 
+        flex-direction: row; 
+        gap: 2rem;
+        width: 500px;
+        margin: auto;
+    }
+    .main1btn .button2{
+        border-radius: 20px;
+        background-color: #DDDDDD;
+        box-shadow: none;
+    }
+    .content h1 {
+      color: #000000;
+      font-size: 3em;
+      transition: all 0.3s ease-in;
+      transform: scale(1);
+      animation: fadeScaleIn 0.5s ease-out forwards;
+    }
+
+    #typing-container {
+        font-size: 1.5em;
+        color: #000000;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+
+    #cursor {
+        display: inline-block;
+        animation: blink 0.7s steps(1) infinite;
+        transform: translateX(5px);
+    }
+
+    @keyframes blink {
+        0%, 100% { opacity: 0; }
+        50% { opacity: 1; }
+    }
+
+    .highlight {
+      color: white;
+      font-weight: bold;
     }
     .main2 {
         display: flex;
@@ -55,7 +114,6 @@
         gap: 3rem;
         color: #000;
         width: 100%;
-        max-width: 1600px;
         justify-content: center;
         align-items: center;
         height: 500px;
@@ -69,47 +127,8 @@
         justify-content: center;
         height: 500px;
     }
-    .images{
-        display: grid;
-        position: relative;
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-        gap: 0rem;
-        image-rendering: pixelated;
-        width: 800px;
-        height:max-content;
-    }
-    .images img{
-        width: 100%;
-        height: 100%;
-    }
-    .image1{
-        width: 100px;
-        height: 100px;
-        border-right: 4px solid white;
-        border-bottom: 4px solid white;
-        padding-left: 2rem;
-        padding-top: 3rem;
-    }
     .sidebar-section {
         display: none; /* Hide sidebar by default */
-    }
-    .image2{
-        width: 100px;
-        height: 100px;
-        padding-top: 1rem;
-        border-bottom: 4px solid white;
-    }
-    .image3{
-        width: 100px;
-        height: 100px;
-        border-right: 4px solid white;
-        padding-bottom: 1rem;
-    }
-    .image4{
-        width: 100px;
-        height: 100px;
-        padding-right: 2rem;
-        padding-bottom: 3rem;
     }
     .myinfo{
         display: flex;
@@ -118,9 +137,10 @@
         text-align: center;
         padding: 1rem;
         width:400px;
-        max-width: 600px;
+        font-size:1rem;
+        height: 530px;
         color: black;
-        background-color: #d3d3d3;
+        background-color: #fdf0f0;
         border-radius: 8px;
     }
     .myinfo img{
@@ -162,25 +182,6 @@
         height: 150px;
         text-align: center;
     }
-    .myskills button{
-        background: rgba(233, 231, 231, 0.747);
-        padding: 1rem 2rem;
-        font-size: 1.1rem;
-        font-weight: bold;
-        font-family: 'Poppins', sans-serif;
-        color: black;
-        justify-content: center;
-        height:3.54rem;
-        margin-top: 2rem;
-        margin-left: 9rem;
-        border-radius: 40px;
-        border: none;
-        cursor: pointer;
-    } 
-    .myskills button:hover{
-        transition: 0s;
-        box-shadow: 1px 2px 5px #ffffff;
-    }
     .skillimg img{
         width: 100px;
         height: 100px;
@@ -202,7 +203,7 @@
         background-color:#fffdfdca;
         width: 600px;
         box-shadow: 2px 10px 18px rgb(179, 167, 174);
-        max-width: 1300px;
+        height: 350px;
         align-items: center;
         padding: 2rem 3rem;
         align-items: center;
@@ -235,41 +236,6 @@
         font-weight: bold;
         color: black;
     }
-    .myprojects button{
-        background: rgba(233, 231, 231, 0.747);
-        padding: 1rem 2rem;
-        font-size: 1.1rem;
-        font-family: 'Poppins', sans-serif;
-        color: rgb(0, 0, 0);
-        font-weight: bold;
-        height:3.54rem;
-        margin-top: 2rem;
-        margin-left: 9rem;
-        border-radius: 40px;
-        border: none;
-        cursor: pointer;
-    }
-    .myprojects button:hover{
-        transition: 0s;
-        box-shadow: 1px 2px 5px #ffffff;
-    }
-    .button{
-        background-color: deeppink;
-        padding: 1rem 2rem;
-        font-size: 1.1rem;
-        font-weight: bold;
-        font-family: 'Poppins', sans-serif;
-        color: rgb(0, 0, 0);
-        justify-content: center;
-        margin: auto;
-        height: 3.54rem;
-        margin-left: 39rem;
-        border-radius: 40px;
-        margin-bottom: 80px;
-        border: none;
-        cursor: pointer;
-        box-shadow: 0 10px 10px rgba(186, 3, 97, 0.252);
-    }
     .mydetails{
         display: flex;
         flex-direction: column;
@@ -277,7 +243,6 @@
         background-color:  rgb(255, 245, 245);
         color: #333333;
     }
-    
    .sidebar-toggle-btn1{
     display: none;
    }
@@ -310,9 +275,6 @@
             background-image: url("/Images/main1background.jpg");
             background-size: stretch;
             box-shadow: inset 0 0 300px rgb(255, 255, 255);
-        }
-        .images{
-            display: none;
         }
         .myinfo {
             max-width: 100%;
@@ -423,26 +385,6 @@
             text-align: center;
             flex-shrink: 0; /* Prevents items from shrinking */
             animation: none; /* Removes conflicting animation */
-        }
-        .myskills button, .myprojects button {
-            width: 50%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            margin: auto;
-            margin-top: 30px;
-            font-size: 1rem;
-        }
-        .button2 {
-            width: 100%;
-            font-size: 1rem;
-            border: none;
-        }
-        .button {
-            margin-left: 0;
-            width: 100%;
-            font-size: 1rem;
-            padding: 0.7rem 0;
         }
         .sidebar-section {
             display: none; /* Show sidebar on mobile */
@@ -607,13 +549,19 @@
     </header>
 
     <section class="hero">
-        <div class="background"></div>
         <div class="main1">
-            <div class="images">
-                <img class="image1" src="/Images/data-analysis1.jpg" alt="image1">
-                <img class="image2" src="/Images/data-analysis2.jpg" alt="image2">
-                <img class="image3" src="/Images/data-analysis3.jpeg" alt="image3">
-                <img class="image4" src="/Images/data-analysis4.jpg" alt="image4">
+            <div class="content">
+                <h1>Welcome's to <span class="highlight">SHUBHAM's CodeQuotient</span></h1>
+                <p id="typing-container">
+                    <span id="typed-text">Empowering young minds </span><span id="cursor"> |</span>
+                </p>  
+                <p style="margin-top: 1rem; font-size: 18px; font-weight: 700;">
+                    Dive into the world of <strong>Data Science</strong> — where numbers tell stories and insights drive innovation. Whether you're exploring <em>Python, machine learning, statistics</em>, or <em>data visualization</em>, our platform offers hands-on tutorials, real-world projects, and expert guidance to help you master the skills that matter. Start your journey today and turn data into decisions!
+                </p>
+                <div class="main1btn">
+                    <button class="button2" onclick="location.href='/Tutorials/tutorials.html'">START LEARNING</button>
+                    <button class="button2" onclick="location.href='/Datasets/datasets.html'">EXPLORE DATASETS</button>
+                </div>
             </div>
             <div class="myinfo">
                 <h2 style="margin-bottom: 1rem; border-bottom: 1px solid rgb(0, 0, 0);">About me</h2>
@@ -642,7 +590,7 @@
                 Why SHUBHAM's CodeQuotient?
             </h1>
             <p style="text-align: center; font-size: 15px; font-weight: 700; margin: 8px; margin-top: 0%;" >
-                This is not a common website, It's a portfolio of mine and is a dedicated learning hub for aspiring and professional data analysts. It features hands-on project implementations that span data cleaning, visualization statistical analysis, and predictive modeling. Each project is accompanied by real-world datasets,enabling users to practice
+                This is not a common website, It's a portfolio of mine and is a dedicated learning hub for aspiring and professional data analysts. It features hands-on project implementations that span data cleaning, visualization, statistical analysis, and predictive modeling. Each project is accompanied by real-world datasets,enabling users to practice
                 and refine their analytical skills in a practical context. The platform emphasizes actionable insights, storytelling with data, and mastering tools like Python, Excel, and SQL. With a sleek, user-friendly interface, learners can explore topics at
                 their own pace and build a portfolio that truly showcases their capabilities.Whether you're preparing for a role or leveling up your skills, this space is designed to help you grow confidently as a data analyst.
             </p>
@@ -652,76 +600,55 @@
                     <ul>
                         <li>
                             <div class="skillimg">
-                                <a href="/Tutorials/Python/python.html">
                                 <img src="/Images/pyimg.png" alt="PYTHON">
-                                </a>
                             </div>PYTHON
                         </li>
                         <li>
                             <div class="skillimg">
-                                <a href="/Tutorials/SQL/sql.html">
                                 <img src="/Images/sqlimg.png" alt="SQL">
-                                </a>
                             </div>SQL
                         </li>
                         <li>
                             <div class="skillimg">
-                                <a href="/Tutorials/R Programming/">
                                 <img src="/Images/rprimg.jpg" alt="R PROGRAMMING">
-                                </a>
                             </div>R
                         </li>
                         <li>
                         <div class="skillimg">
-                            <a href="/Tutorials/Pandas/pandas.html">
                             <img src="/Images/pdimg.png" alt="PANDAS">
-                            </a>
                         </div>PANDAS
                         </li>
                         <li>
                             <div class="skillimg">
-                                <a href="/Tutorials/Numpy/">
                                 <img src="/Images/npimg.png" alt="NUMPY">
-                                </a>
                             </div>NUMPY
                         </li>
                         <li>
                             <div class="skillimg">
-                                <a href="/Tutorials/Matplot/">
                                 <img src="/Images/mtplotimg.png" alt="MATPLOTLIB">
-                                </a>
                             </div>MATPLOTLIB
                         </li>
                         <li>
                             <div class="skillimg">
-                                <a href="/Tutorials/Seaborn/">
                                 <img src="/Images/seabimg.png" alt="SEABORN">
-                                </a>
                             </div>SEABORN
                         </li>
                         <li>
                             <div class="skillimg">
-                                <a href="/Tutorials/Excel/">
                                 <img src="/Images/excelimg.jpg" alt="EXCEL">
-                                </a>
                             </div>EXCEL
                         </li>
                         <li>
                             <div class="skillimg">
-                                <a href="/Tutorials/PostgreSQL/">
                                 <img src="/Images/pstgsqlimg.png" alt="POSTGRESQL">
-                                </a>
                             </div>POSTGRESQL
                         </li>
                         <li>
                             <div class="skillimg">
-                                <a href="/Tutorials/Power Bi/">
                                 <img src="/Images/pbiimg.png" alt="POWER BI">
-                                </a>
                             </div>POWER BI
                         </li>
                     </ul>
-                    <button onclick="location.href='/Tutorials/tutorials.html'">EXPLORE MORE</button>
                 </div>
                 <div class="myprojects">
                     <h1>My Projects</h1>
@@ -734,12 +661,102 @@
                         <li>Covid-19 analysis</li>
                         <li>Spotify user analysis</li>
                     </ul>
-                    <button onclick="location.href='/Projects/Projects.html'">EXPLORE MORE</button>
                 </div>  
             </div>
-            <button class="button2" onclick="location.href='/Datasets/datasets.html'">EXPLORE DATASETS</button>
+        </div>
+        <div class="testimonial" style="background-color: #f3eeee; width: 100%; height: 820px; padding: 40px 20px; color: #000;">
+            <h2 style="text-align: center; font-size: 2em; margin-bottom: 30px;">What Learners Say</h2>
+            <div style="max-width: 1000px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
+                <!-- Testimonial Card 1 -->
+                <div style="flex: 1 1 300px; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                    <p style="font-style: italic;">"SHUBHAM's CodeQuotient made Data Science feel approachable and fun. The visual guides and real-world projects helped me land my first internship!"</p>
+                    <p style="font-weight: bold; margin-top: 10px;">— Priya S., Data Science Student</p>
+                </div>
+                <!-- Testimonial Card 2 -->
+                <div style="flex: 1 1 300px; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                    <p style="font-style: italic;">"The hands-on tutorials and cheat sheets from SHUBHAM's CodeQuotient helped me finally understand Python and pandas. Highly recommended!"</p>
+                    <p style="font-weight: bold; margin-top: 10px;">— Arjun M., Aspiring Data Analyst</p>
+                </div>
+                <!-- Testimonial Card 3 -->
+                 <div style="flex: 1 1 300px; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                  <p style="font-style: italic;">"SHUBHAM’s CodeQuotient helped me to understand SQl basics and SQL joins with simple visuals and relatable examples. It’s my go-to site before interviews!"</p>
+                  <p style="font-weight: bold; margin-top: 10px;">— Gayatri J., Junior Data Analyst</p>
+                </div>
+                <!-- Testimonial Card 4 -->
+                <div style="flex: 1 1 300px; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                    <p style="font-style: italic;">"SHUBHAM's CodeQuotient helped me visualize complex data with ease. The Power BI guides were a game-changer for my final year project."</p>
+                    <p style="font-weight: bold; margin-top: 10px;">— Suhsnat D., Computer Science Graduate</p>
+                </div>
+                <!-- Testimonial Card 5 -->
+                <div style="flex: 1 1 300px; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                    <p style="font-style: italic;">"As a middle school teacher, I found SHUBHAM’s visual worksheets perfect for introducing coding to my students. They loved the QR generator project!"</p>
+                    <p style="font-weight: bold; margin-top: 10px;">— Neha S., STEM Educator</p>
+                </div>
+                <!-- Testimonial Card 6 -->
+                <div style="flex: 1 1 300px; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                    <p style="font-style: italic;">"The Git and GitHub cheat sheets from SHUBHAM's CodeQuotient helped me finally understand version control. I now use them in my classroom!"</p>
+                    <p style="font-weight: bold; margin-top: 10px;">— Anita G., Coding Instructor</p>
+                </div>
+                <!-- Testimonial Card 7 -->
+                 <div style="flex: 1 1 300px; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                    <p style="font-style: italic;">"From Git basics to Spark workflows, SHUBHAM's CodeQuotient breaks it all down with clarity. A must-visit for any beginner!"</p>
+                    <p style="font-weight: bold; margin-top: 10px;">— Meera T., High School STEM Teacher</p>
+                </div>
+                <!-- Testimonial Card 8 -->
+                <div style="flex: 1 1 300px; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                  <p style="font-style: italic;">"The interactive dashboards and real datasets from SHUBHAM’s CodeQuotient made learning Power BI exciting. I now use it at work daily!"</p>
+                  <p style="font-weight: bold; margin-top: 10px;">— Devansh P., Business Intelligence Intern</p>
+                </div>
+                <!-- Testimonial Card 9 -->
+                <div style="flex: 1 1 300px; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                  <p style="font-style: italic;">"SHUBHAM’s CodeQuotient turned my fear of coding into curiosity. The step-by-step Python projects were perfect for a beginner like me."</p>
+                  <p style="font-weight: bold; margin-top: 10px;">— Sneha K., College Freshman</p>
+                </div>
+            </div>
+        </div>
+        <div id="contributors" style="background-color: #f0f4f8; padding: 40px 20px; height: 600px; color: #000;">
+            <h2 style="text-align: center; font-size: 2em; margin-bottom: 30px;">Meet Our Contributors</h2>
+            <div style="max-width: 1000px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
+                <!-- Contributor Card 1 -->
+                <div style="flex: 1 1 280px; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                    <h3 style="margin-bottom: 10px;">SHUBHAM</h3>
+                    <p style="font-weight: bold; color: #007bff;">Founder & Lead Educator</p>
+                    <p>Creator of SHUBHAM's CodeQuotient, responsible for designing all interactive dashboards, tutorials, and classroom-friendly resources that simplify data science for learners.</p>
+                </div>
+                <!-- Contributor Card 2 -->
+                <div style="flex: 1 1 280px; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                    <h3 style="margin-bottom: 10px;">Priya S.</h3>
+                    <p style="font-weight: bold; color: #007bff;">Content Reviewer</p>
+                    <p>Ensures clarity and accuracy in tutorials and worksheets, making technical concepts student-friendly.</p>
+                </div>
+                <!-- Contributor Card 3 -->
+                <div style="flex: 1 1 280px; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                    <h3 style="margin-bottom: 10px;">Arjun M.</h3>
+                    <p style="font-weight: bold; color: #007bff;">Project Curator</p>
+                    <p>Curates real-world datasets and builds hands-on projects for learners to explore data science practically.</p>
+                </div>
+                <!-- Contributor Card 4 -->
+                <div style="flex: 1 1 280px; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                    <h3 style="margin-bottom: 10px;">Meera T.</h3>
+                    <p style="font-weight: bold; color: #007bff;">Educator Advisor</p>
+                    <p>Provides feedback on classroom usability and helps adapt resources for middle school STEM environments.</p>
+                </div>
+                <!-- Contributor Card 5 -->
+                <div style="flex: 1 1 280px; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                    <h3 style="margin-bottom: 10px;">Sneha K.</h3>
+                    <p style="font-weight: bold; color: #007bff;">Visual Design Assistant</p>
+                    <p>Supports the creation of engaging posters, worksheets, and infographics for classroom and online learners.</p>
+                </div>
+                <!-- Contributor Card 7 -->
+                <div style="flex: 1 1 280px; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                    <h3 style="margin-bottom: 10px;">Gayatri J.</h3>
+                    <p style="font-weight: bold; color: #007bff;">Git & Web Integration Mentor</p>
+                    <p>Guides learners through Git/GitHub workflows and helps integrate web design effects into educational projects.</p>
+                </div>
+            </div>
         </div>
     </section>
+    
   
     <footer id="contact">
         <div class="footercontainer">
@@ -755,5 +772,21 @@
             <p class="copyright">© 2025 SHUBHAM's CodeQuotient. All rights reserved.</p>
     </footer>
     <script src="/Script/script.js"></script>
+    <script>
+        const text = "  with fun, visual, and hands-on coding and science!";
+        const typedText = document.getElementById("typed-text");
+        const cursor = document.getElementById("cursor");
+        const startindex=0;
+        let index = startindex;
+
+        function type() {
+            if (index < text.length) {
+            typedText.textContent += text.charAt(index);
+            index++;
+            setTimeout(type, 100); // adjust speed here
+            }
+        }
+        window.onload = type;
+    </script>
 </body>
 </html>
